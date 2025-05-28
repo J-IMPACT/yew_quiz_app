@@ -99,6 +99,7 @@ fn quiz() -> Html {
     html! {
         <div style="text-align: center;">
             <h1>{ "Quiz App" }</h1>
+            <p>{ &*final_score }</p>
 
             { if *current < questions.len() {
                 let q = &questions[*current];
@@ -121,7 +122,7 @@ fn quiz() -> Html {
                         <h2>{ "Quiz Complete!" }</h2>
                         <input type="text" placeholder="Enter your name" ref={input_ref.clone()} />
                         <button onclick={on_submit_name}>{ "Submit Name" }</button>
-                        <p>{ &*final_score }</p>
+                        <p></p>
                         <button onclick={on_restart}>{ "Restart" }</button>
                     </>
                 }
