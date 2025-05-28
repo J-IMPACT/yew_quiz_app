@@ -82,7 +82,7 @@ fn quiz() -> Html {
         })
     };
 
-    let final_score = use_memo(
+    let show_score = use_memo(
         ((*name).clone(), *score),
         {
             let total = questions.len();
@@ -99,7 +99,7 @@ fn quiz() -> Html {
     html! {
         <div style="text-align: center;">
             <h1>{ "Quiz App" }</h1>
-            <p>{ &*final_score }</p>
+            <p>{ &*show_score }</p>
 
             { if *current < questions.len() {
                 let q = &questions[*current];
