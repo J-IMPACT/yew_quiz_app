@@ -64,11 +64,9 @@ fn quiz() -> Html {
     let on_restart = {
         let current = current.clone();
         let score = score.clone();
-        let name = name.clone();
         Callback::from(move |_| {
             current.set(0);
             score.set(0);
-            name.set("".to_string());
         })
     };
 
